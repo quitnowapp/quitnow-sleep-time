@@ -16,6 +16,13 @@ public class SleepingTime {
         wakeUpTime = sz.getWakeUp();
     }
 
+    public SleepingTime() {
+        SleepingZone sz = new SleepingZone(Locale.getDefault());
+
+        bedTime = sz.getBedtime();
+        wakeUpTime = sz.getWakeUp();
+    }
+
     public HourMinute getBedtime() {
         return bedTime;
     }
