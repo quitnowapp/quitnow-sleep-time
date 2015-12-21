@@ -15,6 +15,14 @@ public class SleepingZone {
         times.put(DEFAULT_COUNTRY_CODE, new SleepTimes(new HourMinute(23, 54), new HourMinute(7, 20)));
         times.put("es", new SleepTimes(new HourMinute(0, 32), new HourMinute(8, 5)));
         times.put("fr", new SleepTimes(new HourMinute(0, 19), new HourMinute(7, 51)));
+        times.put("de", new SleepTimes(new HourMinute(23, 59), new HourMinute(7, 25)));
+        times.put("it", new SleepTimes(new HourMinute(00, 35), new HourMinute(7, 52)));
+        times.put("gr", new SleepTimes(new HourMinute(01, 05), new HourMinute(8, 25)));
+        times.put("gb", new SleepTimes(new HourMinute(00, 28), new HourMinute(7, 33)));
+        times.put("nl", new SleepTimes(new HourMinute(00, 17), new HourMinute(7, 47)));
+        times.put("ru", new SleepTimes(new HourMinute(01, 05), new HourMinute(8, 06)));
+        times.put("pl", new SleepTimes(new HourMinute(00, 55), new HourMinute(7, 25)));
+        times.put("cn", new SleepTimes(new HourMinute(00, 32), new HourMinute(8, 06)));
     }
 
     public SleepingZone(Locale locale) {
