@@ -11,7 +11,7 @@ import static junit.framework.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class SleepingTimeSpainTest {
+public class SleepingTimeFranceTest {
 
     SimpleDateFormat sdf = new SimpleDateFormat("hh:mm");
     MockDateProvider mockDateProvider;
@@ -21,20 +21,20 @@ public class SleepingTimeSpainTest {
     public void init() {
         mockDateProvider = new MockDateProvider();
 
-        st = new SleepingTime(new Locale("es", "ES"));
+        st = new SleepingTime(new Locale("fr", "FR"));
         st.setDateProvider(mockDateProvider);
     }
 
     @Test
-    public void shouldSaySpanishPeopleGoesToSleepAt_00_32() {
-        assertEquals(0, st.getBedtime().getHour());
-        assertEquals(32, st.getBedtime().getMinute());
+    public void shouldSayFrenchPeopleGoesToSleepAt_00_19() {
+        assertEquals(00, st.getBedtime().getHour());
+        assertEquals(19, st.getBedtime().getMinute());
     }
 
     @Test
-    public void shouldSaySpanishPeopleWakesUpAt_08_05() {
-        assertEquals(8, st.getWakeUp().getHour());
-        assertEquals(5, st.getWakeUp().getMinute());
+    public void shouldSayFrenchPeopleWakesUpAt_07_51() {
+        assertEquals(7, st.getWakeUp().getHour());
+        assertEquals(51, st.getWakeUp().getMinute());
     }
 
     @Test
@@ -52,43 +52,43 @@ public class SleepingTimeSpainTest {
     }
 
     @Test
-    public void shouldSayFalseAt_00_31() throws ParseException {
-        mockDateProvider.setFixed(sdf.parse("00:31").getTime());
+    public void shouldSayFalseAt_00_18() throws ParseException {
+        mockDateProvider.setFixed(sdf.parse("00:18").getTime());
 
         assertFalse(st.isSleepingTime());
     }
 
     @Test
-    public void shouldSayTrueAt_00_32() throws ParseException {
-        mockDateProvider.setFixed(sdf.parse("00:32").getTime());
+    public void shouldSayTrueAt_00_19() throws ParseException {
+        mockDateProvider.setFixed(sdf.parse("00:19").getTime());
 
         assertTrue(st.isSleepingTime());
     }
 
     @Test
-    public void shouldSayTrueAt_00_33() throws ParseException {
-        mockDateProvider.setFixed(sdf.parse("00:33").getTime());
+    public void shouldSayTrueAt_00_20() throws ParseException {
+        mockDateProvider.setFixed(sdf.parse("00:20").getTime());
 
         assertTrue(st.isSleepingTime());
     }
 
     @Test
-    public void shouldSayTrueAt_08_04() throws ParseException {
-        mockDateProvider.setFixed(sdf.parse("08:04").getTime());
+    public void shouldSayTrueAt_7_50() throws ParseException {
+        mockDateProvider.setFixed(sdf.parse("07:50").getTime());
 
         assertTrue(st.isSleepingTime());
     }
 
     @Test
-    public void shouldSayTrueAt_08_05() throws ParseException {
-        mockDateProvider.setFixed(sdf.parse("08:05").getTime());
+    public void shouldSayTrueAt_07_51() throws ParseException {
+        mockDateProvider.setFixed(sdf.parse("07:51").getTime());
 
         assertTrue(st.isSleepingTime());
     }
 
     @Test
-    public void shouldSayFalseAt_08_06() throws ParseException {
-        mockDateProvider.setFixed(sdf.parse("08:06").getTime());
+    public void shouldSayFalseAt_07_52() throws ParseException {
+        mockDateProvider.setFixed(sdf.parse("07:52").getTime());
 
         assertFalse(st.isSleepingTime());
     }

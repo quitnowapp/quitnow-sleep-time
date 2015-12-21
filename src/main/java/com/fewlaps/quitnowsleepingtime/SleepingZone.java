@@ -14,6 +14,7 @@ public class SleepingZone {
     static {
         times.put(DEFAULT_COUNTRY_CODE, new SleepTimes(new HourMinute(23, 54), new HourMinute(7, 20)));
         times.put("es", new SleepTimes(new HourMinute(0, 32), new HourMinute(8, 5)));
+        times.put("fr", new SleepTimes(new HourMinute(0, 19), new HourMinute(7, 51)));
     }
 
     public SleepingZone(Locale locale) {

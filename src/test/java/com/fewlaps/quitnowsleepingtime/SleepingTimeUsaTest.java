@@ -12,18 +12,16 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class SleepingTimeUsaTest {
+
     SimpleDateFormat sdf = new SimpleDateFormat("hh:mm");
-
-    Locale spanishLocale = new Locale("en", "US");
-    MockDateProvider mockDateProvider = new MockDateProvider();
-
+    MockDateProvider mockDateProvider;
     SleepingTime st;
 
     @Before
     public void init() {
         mockDateProvider = new MockDateProvider();
 
-        st = new SleepingTime(spanishLocale);
+        st = new SleepingTime(new Locale("en", "US"));
         st.setDateProvider(mockDateProvider);
     }
 
