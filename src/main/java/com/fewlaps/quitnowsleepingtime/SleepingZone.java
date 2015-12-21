@@ -5,7 +5,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public class SleepingZone {
-    Locale locale;
+    String countryCode;
 
     private static final Map<String, SleepTimes> times = new HashMap<String, SleepTimes>();
 
@@ -25,12 +25,12 @@ public class SleepingZone {
         times.put("cn", new SleepTimes(new HourMinute(00, 32), new HourMinute(8, 06)));
     }
 
-    public SleepingZone(Locale locale) {
-        this.locale = locale;
+    public SleepingZone(String countryCode) {
+        this.countryCode = countryCode;
     }
 
     public HourMinute getBedtime() {
-        SleepTimes st = times.get(locale.getCountry().toLowerCase());
+        SleepTimes st = times.get(countryCode.toLowerCase());
         if (st != null) {
             return st.bedTime;
         }
@@ -38,7 +38,7 @@ public class SleepingZone {
     }
 
     public HourMinute getWakeUp() {
-        SleepTimes st = times.get(locale.getCountry().toLowerCase());
+        SleepTimes st = times.get(countryCode.toLowerCase());
         if (st != null) {
             return st.wakeUpTime;
         }

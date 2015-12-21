@@ -21,7 +21,7 @@ public class SleepingTimeSpainTest {
     public void init() {
         mockDateProvider = new MockDateProvider();
 
-        st = new SleepingTime(new Locale("es", "ES"));
+        st = new SleepingTime("ES");
         st.setDateProvider(mockDateProvider);
     }
 

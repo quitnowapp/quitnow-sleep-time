@@ -11,7 +11,7 @@ public class DefaultValuesTest {
     @Test
     public void shouldUseLocalLocaleByDefault() {
         SleepingTime defaultLocaleST = new SleepingTime();
-        SleepingTime localLocaleST = new SleepingTime(Locale.getDefault());
+        SleepingTime localLocaleST = new SleepingTime(Locale.getDefault().getCountry());
 
         assertEquals(localLocaleST.getBedtime(), defaultLocaleST.getBedtime());
         assertEquals(localLocaleST.getWakeUp(), defaultLocaleST.getWakeUp());

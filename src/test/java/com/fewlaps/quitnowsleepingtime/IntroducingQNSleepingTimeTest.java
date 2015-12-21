@@ -8,11 +8,13 @@ public class IntroducingQNSleepingTimeTest {
 
     @Test
     public void theCodeOfTheReadmeWorks() {
+        new SleepingTime().isSleepingTime();
+
         SleepingTime st = new SleepingTime();
         st.isSleepingTime();
         st.getBedtime();
         st.getWakeUp();
 
-        new SleepingTime(new Locale("es", "ES")).isSleepingTime();
+        new SleepingTime("es").isSleepingTime();
     }
 }

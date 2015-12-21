@@ -9,15 +9,15 @@ public class SleepingTime {
     HourMinute bedTime;
     HourMinute wakeUpTime;
 
-    public SleepingTime(Locale locale) {
-        SleepingZone sz = new SleepingZone(locale);
+    public SleepingTime(String countryCode) {
+        SleepingZone sz = new SleepingZone(countryCode);
 
         bedTime = sz.getBedtime();
         wakeUpTime = sz.getWakeUp();
     }
 
     public SleepingTime() {
-        SleepingZone sz = new SleepingZone(Locale.getDefault());
+        SleepingZone sz = new SleepingZone(Locale.getDefault().getCountry());
 
         bedTime = sz.getBedtime();
         wakeUpTime = sz.getWakeUp();
