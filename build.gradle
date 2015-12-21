@@ -1,0 +1,36 @@
+group 'com.fewlaps.quitnowsleepingtime'
+version '1.0.0'
+
+apply plugin: 'java'
+apply plugin: 'com.novoda.bintray-release'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.3.4'
+    }
+}
+
+compileJava {
+    sourceCompatibility = 1.6
+    targetCompatibility = 1.6
+}
+
+publish {
+    userOrg = 'fewlaps'
+    groupId = 'com.fewlaps.quitnowsleepingtime'
+    artifactId = 'quitnow-sleeping-time'
+    publishVersion = '1.0.0'
+    desc = ''
+    website = 'https://github.com/Fewlaps/quitnow-sleeping-time'
+}
