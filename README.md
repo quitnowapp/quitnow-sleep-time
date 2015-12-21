@@ -26,13 +26,13 @@ new SleepingTime("es")).isSleepingTime(); //You can also force a country code
 
 #Download
 
-* Get <a href="https://github.com/Fewlaps/quitnow-sleep-time/releases/download/v1.0/quitnow-sleep-time-1.0.jar">the latest .jar</a> 
+* Get <a href="https://github.com/Fewlaps/quitnow-sleep-time/releases/download/v1.0/quitnow-sleeping-time-1.0.0.jar">the latest .jar</a> 
 
 * Grab via Gradle:
 ```groovy
 repositories { jcenter() }
     
-compile 'com.fewlaps.quitnowsleepingtime:quitnow-sleeping-time:1.0'
+compile 'com.fewlaps.quitnowsleepingtime:quitnow-sleeping-time:1.0.0'
 ```
 * Grab via Maven:
 ```xml
@@ -44,7 +44,7 @@ compile 'com.fewlaps.quitnowsleepingtime:quitnow-sleeping-time:1.0'
 <dependency>
     <groupId>com.fewlaps.quitnowsleepingtime</groupId>
     <artifactId>quitnow-sleeping-time</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
