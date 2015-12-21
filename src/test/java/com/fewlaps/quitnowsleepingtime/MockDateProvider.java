@@ -1,5 +1,6 @@
 package com.fewlaps.quitnowsleepingtime;
 
+import com.fewlaps.quitnowsleepingtime.DateProvider;
 
 public class MockDateProvider implements DateProvider {
 

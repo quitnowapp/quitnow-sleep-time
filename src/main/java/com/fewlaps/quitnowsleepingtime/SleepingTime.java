@@ -10,9 +10,10 @@ public class SleepingTime {
     HourMinute wakeUpTime;
 
     public SleepingTime(Locale locale) {
-        bedTime = new HourMinute(0, 32);
-        wakeUpTime = new HourMinute(8, 5);
+        SleepingZone sz = new SleepingZone(locale);
 
+        bedTime = sz.getBedtime();
+        wakeUpTime = sz.getWakeUp();
     }
 
     public HourMinute getBedtime() {
@@ -25,5 +26,21 @@ public class SleepingTime {
 
     protected void setDateProvider(DateProvider dateProvider) {
         this.dateProvider = dateProvider;
+    }
+
+    public boolean isSleepingTime() {
+        HourMinute now = new HourMinute(dateProvider.now());
+
+        if (getBedtime().isBeforeMidnight()) {
+            int minutesUntilMidnight = getBedtime().getMinutesUntilMidnight();
+
+            HourMinute bedTimeWithOffset = getBedtime().addMinutes(minutesUntilMidnight);
+            HourMinute wakeUpTimeWithOffset = getWakeUp().addMinutes(minutesUntilMidnight);
+            HourMinute nowWithOffset = now.addMinutes(minutesUntilMidnight);
+
+            return nowWithOffset.isAfter(bedTimeWithOffset) && (nowWithOffset.isBefore(wakeUpTimeWithOffset) || nowWithOffset.equals(wakeUpTimeWithOffset));
+        } else {
+            return now.isAfter(getBedtime()) && (now.isBefore(getWakeUp()) || now.equals(getWakeUp()));
+        }
     }
 }
