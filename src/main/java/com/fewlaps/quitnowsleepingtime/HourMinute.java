@@ -7,11 +7,12 @@ import java.util.GregorianCalendar;
 public class HourMinute {
     public static final int MID_DAY_HOUR = 12;
     public static final int MINUTES_IN_A_DAY = 1440;
+    public static final int MINUTES_IN_HOUR = 60;
     int time; //minutes since 00:00
 
     public HourMinute() {
         GregorianCalendar gc = new GregorianCalendar();
-        time = gc.get(Calendar.HOUR_OF_DAY) * 60 + gc.get(Calendar.MINUTE);
+        time = gc.get(Calendar.HOUR_OF_DAY) * MINUTES_IN_HOUR + gc.get(Calendar.MINUTE);
     }
 
     public HourMinute(int minutes) {
@@ -21,11 +22,11 @@ public class HourMinute {
     public HourMinute(long millis) {
         GregorianCalendar gc = new GregorianCalendar();
         gc.setTime(new Date(millis));
-        time = gc.get(Calendar.HOUR_OF_DAY) * 60 + gc.get(Calendar.MINUTE);
+        time = gc.get(Calendar.HOUR_OF_DAY) * MINUTES_IN_HOUR + gc.get(Calendar.MINUTE);
     }
 
     public HourMinute(int hour, int minute) {
-        time = hour * 60 + minute;
+        time = hour * MINUTES_IN_HOUR + minute;
     }
 
     private int getTime() {
@@ -33,11 +34,11 @@ public class HourMinute {
     }
 
     public int getHour() {
-        return time / 60;
+        return time / MINUTES_IN_HOUR;
     }
 
     public int getMinute() {
-        return time % 60;
+        return time % MINUTES_IN_HOUR;
     }
 
     public boolean isBefore(HourMinute hm) {
@@ -56,7 +57,7 @@ public class HourMinute {
     public int getMinutesUntil(HourMinute hm) {
         int result = hm.getTime() - time;
         if (result < 0) {
-            result = hm.getTime() - time + 24 * 60;
+            result = hm.getTime() - time + 24 * MINUTES_IN_HOUR;
         }
         return result;
     }

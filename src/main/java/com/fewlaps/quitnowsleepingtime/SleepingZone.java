@@ -1,15 +1,13 @@
 package com.fewlaps.quitnowsleepingtime;
 
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 public class SleepingZone {
-    String countryCode;
-
-    private static final Map<String, SleepTimes> times = new HashMap<String, SleepTimes>();
 
     public static final String DEFAULT_COUNTRY_CODE = "us";
+
+    private static final Map<String, SleepTimes> times = new HashMap<String, SleepTimes>();
 
     static {
         times.put(DEFAULT_COUNTRY_CODE, new SleepTimes(new HourMinute(23, 54), new HourMinute(7, 20)));
@@ -24,6 +22,8 @@ public class SleepingZone {
         times.put("pl", new SleepTimes(new HourMinute(00, 55), new HourMinute(7, 25)));
         times.put("cn", new SleepTimes(new HourMinute(00, 32), new HourMinute(8, 06)));
     }
+
+    private String countryCode;
 
     public SleepingZone(String countryCode) {
         this.countryCode = countryCode;
