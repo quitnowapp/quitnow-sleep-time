@@ -51,6 +51,9 @@ public class HourMinute {
 
     @Override
     public String toString() {
+        if (getMinute() < 10) {
+            return getHour() + ":0" + getMinute();
+        }
         return getHour() + ":" + getMinute();
     }
 
