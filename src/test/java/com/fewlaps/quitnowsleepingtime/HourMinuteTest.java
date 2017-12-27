@@ -237,4 +237,11 @@ public class HourMinuteTest {
         assertEquals(hm.toString(), "23:10");
     }
 
+    @Test
+    public void testEquals_Symmetric() {
+        HourMinute x = new HourMinute(23, 10);
+        HourMinute y = new HourMinute(23, 10);
+        assertTrue(x.equals(y) && y.equals(x));
+        assertTrue(x.hashCode() == y.hashCode());
+    }
 }
