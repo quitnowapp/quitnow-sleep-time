@@ -225,4 +225,16 @@ public class HourMinuteTest {
         assertEquals(00, hm.getHour());
         assertEquals(10, hm.getMinute());
     }
+    @Test
+    public void testToString(){
+        HourMinute hm = new HourMinute(23, 5);
+        assertEquals(hm.toString(), "23:05");
+    }
+
+    @Test
+    public void testToString2(){
+        HourMinute hm = new HourMinute(23, 10);
+        assertEquals(hm.toString(), "23:10");
+    }
+
 }
