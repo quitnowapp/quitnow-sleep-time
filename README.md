@@ -24,7 +24,7 @@ st.getWakeUp(); //The average wake up of the user's country, based in its Locale
 new SleepingTime("es")).isSleepingTime(); //You can also force a country code
 ```
 
-#Download
+# Download
 
 * Get <a href="https://github.com/Fewlaps/quitnow-sleep-time/releases/download/v1.0/quitnow-sleeping-time-1.0.0.jar">the latest .jar</a> 
 
