@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/Fewlaps/quitnow-sleep-time.svg?branch=master)](https://travis-ci.org/Fewlaps/quitnow-sleep-time)
-[![Coverage Status](https://coveralls.io/repos/Fewlaps/quitnow-sleep-time/badge.svg?branch=master&service=github)](https://coveralls.io/github/Fewlaps/quitnow-sleep-time?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/Fewlaps/quitnow-sleep-time/badge.svg?branch=master)](https://coveralls.io/github/Fewlaps/quitnow-sleep-time?branch=master)
 
 # [QuitNow!](http://quitnowapp.com)'s sleeping time
 Be sure that your user is awake before disturbing it with soundy and vibrant notifications!
