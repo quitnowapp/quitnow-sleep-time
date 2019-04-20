@@ -17,7 +17,7 @@ The sample
 
 ```java
 SleepingTime st = new SleepingTime(); //By default, it uses the Locale of the phone
-st.isSleepingTime(); //It's a bad moment to do noise?
+st.isSleepingTime(); //Is it a bad moment to do noise?
 st.getBedtime(); //The average bedtime of the user's country, based in its Locale
 st.getWakeUp(); //The average wake up of the user's country, based in its Locale
 
